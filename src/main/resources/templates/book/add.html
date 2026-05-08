@@ -21,6 +21,25 @@
                                 <a th:href="@{/book/index}" class="link">← 一覧へ戻る</a>
                             </span>
                         </div>
+                        <div class="mb30">
+                            <label for="title">書籍名<span class="text-red asterisk">＊</span></label>
+                            <input class="form_input" type="text" id="title" name="title" th:field="*{title}"
+                                                                placeholder="書籍名を入力" />
+                            <div class="error_msg" th:if="${errTitle}">
+                                <p th:text="${errTitle}" style="color: red"></p>
+                            </div>
+                        </div>
+                        <div class="mb30">
+                            <label for="isbn">ISBN<span class="text-red asterisk">＊</span></label>
+                            <input class="form_input" type="text" id="isbn" name="isbn" th:field="*{isbn}"
+                                                                placeholder="ISBNを入力" />
+                            <div class="error_msg" th:if="${errISBN}">
+                                <p th:text="${errISBN}" style="color: red"></p>
+                            </div>
+                        </div>
+                        <div class="btn_block">
+                            <input id="submit_btn" type="submit" value="保存">
+                        </div>
                     </form>
                 </div>
             </div>
