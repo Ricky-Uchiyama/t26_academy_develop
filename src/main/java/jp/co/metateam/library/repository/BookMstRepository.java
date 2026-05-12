@@ -16,5 +16,4 @@ public interface BookMstRepository extends JpaRepository<BookMst, Long> {
 	Optional<BookMst> selectById(Long id);
 
 	Optional<BookMst> findByIsbn(String isbn);
-	
 }

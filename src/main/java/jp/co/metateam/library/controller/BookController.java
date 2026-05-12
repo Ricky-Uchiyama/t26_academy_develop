@@ -52,11 +52,11 @@ public class BookController {
 
         return "book/add";
     }
-    
+
     @PostMapping("/book/add")
-    public String create(@ModelAttribute BookMstDto bookMstDto,Model model) {
+    public String create(@ModelAttribute BookMstDto bookMstDto, Model model) {
         try {
-            Map<String, String> errorMap =this.bookMstService.validateForCreate(bookMstDto);
+            Map<String, String> errorMap = this.bookMstService.validateForCreate(bookMstDto);
             if (!errorMap.isEmpty()) {
                 model.addAttribute("bookMstDto", bookMstDto);
                 model.addAttribute("errTitle", errorMap.get("errTitle"));
@@ -64,14 +64,11 @@ public class BookController {
                 return "book/add";
             }
             this.bookMstService.save(bookMstDto);
-                return "redirect:/book/index";
-            } catch (Exception e) {
-                log.error("書籍登録処理でエラーが発生しました", e);
-                model.addAttribute("bookMstDto", bookMstDto);
-                return "book/add";
-            }
+            return "redirect:/book/index";
+        } catch (Exception e) {
+            log.error("書籍登録処理でエラーが発生しました", e);
+            model.addAttribute("bookMstDto", bookMstDto);
+            return "redirect:/book/add";
+        }
+    }
 }
-}
-
-
-    

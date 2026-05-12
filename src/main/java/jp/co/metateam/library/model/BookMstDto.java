@@ -23,8 +23,6 @@ public class BookMstDto {
     private String isbn;
 
     private Timestamp deletedAt;
-    private Timestamp createdAt;
-    private Timestamp updatedAt;
 
     private BookMst bookMst;
 }
