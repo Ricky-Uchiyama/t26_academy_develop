@@ -9,14 +9,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 /**
  * 書籍マスタ
  */
 @Entity
-@Table(name = "BookMst")
+@Table(name = "book_mst")
 public class BookMst {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,6 +34,7 @@ public class BookMst {
     @Column(name = "deleted_at")
     private Timestamp deletedAt;
 
+
     /** Getters */
 
     public Long getId() {
@@ -52,6 +52,7 @@ public class BookMst {
     public Timestamp getDeletedAt() {
         return this.deletedAt;
     }
+    
 
     /** Setters */
 
@@ -70,4 +71,5 @@ public class BookMst {
     public void setDeletedAt(Timestamp deletedAt) {
         this.deletedAt = deletedAt;
     }
+    
 }
