@@ -30,10 +30,9 @@ public class BookMst {
     @Column(name = "title", nullable = false)
     private String title;
 
-    /** 日時 */
+    /** 削除日時 */
     @Column(name = "deleted_at")
     private Timestamp deletedAt;
-    
 
 
     /** Getters */

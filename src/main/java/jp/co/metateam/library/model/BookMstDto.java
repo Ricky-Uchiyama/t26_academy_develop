@@ -16,10 +16,8 @@ public class BookMstDto {
     
     private Long id;
     
-    
     private String title;
 
-    
     private String isbn;
 
     private Timestamp deletedAt;
